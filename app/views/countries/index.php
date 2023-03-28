@@ -4,13 +4,12 @@
 <a href="<?=URLROOT;?>/countries/create">Nieuw record</a>
 <table>
   <thead>
-    <th>id</th>
-    <th>Land</th>
-    <th>hoofdstad</th>
-    <th>continent</th>
-    <th>aantalinwoners</th>
-    <th>update</th>
-    <th>delete</th>
+    <th>Naam</th>
+    <th>Email</th>
+    <th>Mobiel</th>
+    <th>Volwassen</th>
+    <th>Bewerken</th>
+    <th>Verwijderen</th>
   </thead>
   <tbody>
     <?=$data['countries']?>

@@ -2,7 +2,7 @@
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '');
-define('DB_NAME', 'bowlingcentrum');
+define('DB_NAME', 'mvcframework-v2');
 
 define('APPROOT', dirname(dirname(__FILE__)));
 

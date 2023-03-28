@@ -26,7 +26,7 @@
                     <a class="nav-link" href="#">Bestelling</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="<?=URLROOT;?>/contactinformation/index">Contact</a>
                 </li>
             </ul>
         </div>

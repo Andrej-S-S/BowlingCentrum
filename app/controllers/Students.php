@@ -7,7 +7,7 @@ class Students extends Controller
 {
     // Properties
     private $studentModel;
-    private $message;
+    private $message; 
 
     // De constructor voor het aanmaken van een modelobject
     public function __construct()
