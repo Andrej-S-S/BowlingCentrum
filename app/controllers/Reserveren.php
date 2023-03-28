@@ -53,11 +53,17 @@ class Reserveren extends Controller
 
             header("Location: " . URLROOT . "reserveren/index");
         }
-        $row = $this->reserverenModel->getReserveringen($id);
-        $data = [
-            'title' => "reservering updaten",
-            'row' => $row
+        $row = $this->reserverenModel->getgetReserveringById($id);
 
+        var_dump($row);
+        
+        echo $row->Datum;
+
+        $data = [
+            'Datum' => $row->Datum,
+            'BeginTijd' => $row->BeginTijd,
+            'Volwassenen' => $row->Volwassenen,
+            'Kinderen' => $row->Kinderen,
         ];
 
         $this->view('reserveren/update', $data);

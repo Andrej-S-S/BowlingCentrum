@@ -1,5 +1,7 @@
+<?php var_dump($data) ?>
+
 <?php require APPROOT . '/views/includes/navbar.php'; ?>
-<h3 class="d-flex justify-content-center"><?= $data['title'] ?></h3>
+<!-- <h3 class="d-flex justify-content-center"><?= $data['title'] ?></h3> -->
 <form class="form-group" action="<?= URLROOT; ?>/reserveren/update" method="post">
     <table>
         <tbody>
@@ -8,7 +10,7 @@
                     Datum:
                 </td>
                 <td>
-                    <input class="form-control" type="date" name="Datum">
+                    <input class="form-control" type="date" name="Datum" value="<?php echo $data['Datum'] ?>">
                 </td>
             </tr>
             <tr>
@@ -16,7 +18,7 @@
                     Tijd:
                 </td>
                 <td>
-                    <input class="form-control" type="time" name="BeginTijd">
+                    <input class="form-control" type="time" name="BeginTijd" value="<?php echo $data['BeginTijd'] ?>">
                 </td>
             </tr>
             <tr>
@@ -24,7 +26,7 @@
                     Aantal volwassenen:
                 </td>
                 <td>
-                    <input class="form-control" type="text" name="Volwassenen">
+                    <input class="form-control" type="text" name="Volwassenen" value="<?php echo $data['Volwassenen'] ?>">
                 </td>
             </tr>
             <tr>
@@ -32,7 +34,7 @@
                     Aantal kinderen:
                 </td>
                 <td>
-                    <input class="form-control" type="text" name="Kinderen">
+                    <input class="form-control" type="text" name="Kinderen" value="<?php echo $data['Kinderen'] ?>">
                 </td>
             </tr>
             <tr>

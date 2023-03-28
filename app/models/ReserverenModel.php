@@ -26,6 +26,19 @@ class ReserverenModel
         return $results;
     }
 
+    public function getgetReserveringById($id) {
+        $this->db->query("SELECT  
+                       res.id as resId,
+                       res.Datum, 
+                       res.BeginTijd,
+                       res.Eindtijd,
+                       res.Volwassenen,
+                       res.Kinderen FROM reservering AS res
+                       WHERE res.id = :id");
+        $this->db->bind(':id', 2);
+        return $this->db->single();
+    }
+
     public function createReservering($post, $begintijd)
     {
         $sql = "INSERT INTO reservering (Datum, 
