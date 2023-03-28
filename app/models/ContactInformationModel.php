@@ -43,7 +43,7 @@ inner join  contact AS CONT
         $this->db->query('UPDATE contact
                              SET Email = :Email,
                              Mobiel = :Mobiel
-                             Where id = 1');
+                             Where id = 2');
         
 
         $this->db->bind(':Email', $post["Email"], PDO::PARAM_INT);
