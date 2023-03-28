@@ -1,0 +1,45 @@
+<?php require APPROOT . '/views/includes/navbar.php'; ?>
+<h3 class="d-flex justify-content-center"><?= $data['title'] ?></h3>
+<form class="form-group" action="<?= URLROOT; ?>/reserveren/update" method="post">
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    Datum:
+                </td>
+                <td>
+                    <input class="form-control" type="date" name="Datum">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Tijd:
+                </td>
+                <td>
+                    <input class="form-control" type="time" name="BeginTijd">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Aantal volwassenen:
+                </td>
+                <td>
+                    <input class="form-control" type="text" name="Volwassenen">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Aantal kinderen:
+                </td>
+                <td>
+                    <input class="form-control" type="text" name="Kinderen">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" name="submit" value="Verstuur">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</form>
