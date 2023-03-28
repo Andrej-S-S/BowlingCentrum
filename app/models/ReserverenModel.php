@@ -26,7 +26,8 @@ class ReserverenModel
         return $results;
     }
 
-    public function getgetReserveringById($id) {
+    public function getgetReserveringById($id)
+    {
         $this->db->query("SELECT  
                        res.id as resId,
                        res.Datum, 
@@ -66,11 +67,12 @@ class ReserverenModel
 
     public function updateReservering($post)
     {
-        $sql = "UPDATE reservering SET Datum = :Datum, BeginTijd = :BeginTijd, Volwassenen = :Volwassenen, Kinderen = :Kinderen WHERE id = :id";
-        $this->db->bind(':Datum', $post['Datum']);
-        $this->db->bind(':BeginTijd', $post['BeginTijd']);
-        $this->db->bind(':Volwassenen', $post['Volwassenen']);
-        $this->db->bind(':Kinderen', $post['Kinderen']);
+        $this->db->query("UPDATE reservering SET Datum = :Datum, BeginTijd = :BeginTijd, Volwassenen = :Volwassenen, Kinderen = :Kinderen WHERE id = :resId");
+        $this->db->bind(':Datum', $post['Datum'], PDO::PARAM_STR);
+        $this->db->bind(':BeginTijd', $post['BeginTijd'], PDO::PARAM_STR);
+        $this->db->bind(':Volwassenen', $post['Volwassenen'], PDO::PARAM_INT);
+        $this->db->bind(':Kinderen', $post['Kinderen'], PDO::PARAM_INT);
+        $this->db->bind(':resId', $post['id']);
         $this->db->execute();
     }
 

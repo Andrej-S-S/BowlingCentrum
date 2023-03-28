@@ -49,14 +49,25 @@ class Reserveren extends Controller
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-            $this->reserverenModel->updateReservering($_POST);
+            var_dump($_POST);
+            // exit;
 
-            header("Location: " . URLROOT . "reserveren/index");
+            $data = [
+                'id' => 2,
+                'Datum' => $_POST['Datum'],
+                'BeginTijd' => $_POST['BeginTijd'],
+                'Volwassenen' => $_POST['Volwassenen'],
+                'Kinderen' => $_POST['Kinderen']
+            ];
+
+            $this->reserverenModel->updateReservering($data);
+
+            header("Location: " . URLROOT . "/reserveren/index");
         }
         $row = $this->reserverenModel->getgetReserveringById($id);
 
         var_dump($row);
-        
+
         echo $row->Datum;
 
         $data = [
